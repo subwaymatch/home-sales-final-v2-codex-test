@@ -86,3 +86,13 @@ Use exact numbers computed from the data and check them with a script before you
 - Color: define a small palette (neutrals plus one or two accents) as CSS variables, and use it everywhere: charts, the map, buttons, links, and controls. Keep the accent color for highlighted answer cities. Make sure the palette works in both light and dark modes."
 - **Agent produced:** Added Newsreader serif display typography with DM Sans for body, data labels, and controls. Consolidated light and dark colors into shared CSS theme variables and applied them to report content, charts, map, controls, links, and buttons. Documented the font and palette choices in README.
 - **Checked or changed:** Found and fixed two palette editing errors before browser review: the metrics card referenced an undefined `--navy` token, and two heading rules had redundant serif fallbacks after the font variable. Checked computed font loading, chart/map/control colors, dark theme, and 375px layout in Chromium.
+
+
+## 2026-11-12: Design round 2 controls and chart finish
+
+- **Asked:** "I merged that pull request. Design round 2: controls and chart finish. You have my approval to go ahead without waiting for a plan review. When you are done, commit the changes and open a pull request into main with a short description of what changed.\
+
+- Controls: style every control (dropdowns, number inputs, slider, toggle, buttons) to match the site instead of browser defaults. Sortable table headers should use proper SVG icons that show which column is sorted and in which direction, not text arrow characters. Add hover states and a visible keyboard focus outline.\
+- Chart finish: every chart needs a title and axis labels, formatted numbers (for example $410,000 and 7.6%), no overlapping or cut-off labels, tooltips that match the site's style, and charts that follow the theme in dark mode."
+- **Agent produced:** Styled dropdowns, number fields, range sliders, theme and action buttons, and sortable headers with directional SVG icons. Added quantitative and category axis labels, formatted axis ticks, safe label gutters, keyboard-focusable marks, and a shared theme-aware tooltip to all ten charts.
+- **Checked or changed:** Chromium confirmed titles and two axis labels across all ten charts, correct currency/percent/day formatting, dark theme chart/tooltip colors, functional sorting and Q7/Q8 updates, and no overflow at 375px. Visual review caught and fixed long campus labels clipping at the left edge. The first sort test also caught the SVG icon intercepting pointer clicks; fixed by disabling pointer events on the decorative icon.

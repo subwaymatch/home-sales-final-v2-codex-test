@@ -20,7 +20,7 @@ The dashboard summary uses valid-price sales and treats missing values as unknow
 
 ## Tools
 
-Plain HTML, CSS and JavaScript, with Newsreader for report headings and DM Sans for body text, controls, and chart labels (both served by Google Fonts under the SIL Open Font License). The light and dark themes share a tokenized neutral, terracotta, and teal palette. Papa Parse is loaded from jsDelivr for CSV parsing. `scripts/verify_report.py` independently computes Q1–Q6 with pandas; `scripts/analyze_days_on_market_missingness.py` independently checks the P1 missing-date table and zero-filled counterfactual.
+Plain HTML, CSS and JavaScript, with Newsreader for report headings and DM Sans for body text, controls, and chart labels (both served by Google Fonts under the SIL Open Font License). The light and dark themes share a tokenized neutral, terracotta, and teal palette. Charts use responsive SVG axes, formatted value labels, and theme-matched tooltips; controls and sort indicators use the shared palette. Papa Parse is loaded from jsDelivr for CSV parsing. `scripts/verify_report.py` independently computes Q1–Q6 with pandas; `scripts/analyze_days_on_market_missingness.py` independently checks the P1 missing-date table and zero-filled counterfactual.
 
 ## Citation
 
