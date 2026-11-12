@@ -1,6 +1,6 @@
 # Home sales, measured
 
-An interactive, report-style exploration of 35,442 completed home sales across 18 college-town cities and 11 campus areas. The page answers ten questions about prices, sale timing, property taxes and distance to campus, with an Insights section explaining a key missing-date data-quality issue.
+An interactive, report-style exploration of 35,442 completed home sales across 18 college-town cities and 11 campus areas. The page opens with three computed findings and a table of contents, then answers ten questions about prices, sale timing, property taxes and distance to campus, with an Insights section explaining a key missing-date data-quality issue.
 
 The explorer adds campus, city, year, bedroom, price, living-area, garage, basement, and fireplace filters; map-based city selection; shareable filter URLs; two-area comparisons; a sortable results table; and a light/dark theme. Dashboard filters affect the explorer only. The Q1–Q6 report below is always calculated from the full dataset using each question's stated rules.
 
