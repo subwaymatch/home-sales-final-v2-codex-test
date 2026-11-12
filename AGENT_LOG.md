@@ -45,3 +45,22 @@ Q10. For a selected campus area, maximum budget, and minimum number of bedrooms,
 Before you finish, compute the Q1 to Q6 answers a second way (for example with a short script in scripts/) and confirm the page shows the same numbers. Tell me the answers you got."
 - **Agent produced:** Replaced the placeholder with a data-driven report and interactive controls, and added `scripts/verify_report.py` for independent Q1–Q6 summaries.
 - **Checked or changed:** Compared the page values against the independent pandas results. Browser inspection found that the first Q4 bar chart represented negative changes by their absolute magnitudes and Q10 grouped distances above 9 miles incorrectly; changed Q4 to a diverging chart and retained distance bins through 15+ miles. Verified all ten sections load and the Q7–Q10 answers update after control changes; no browser errors occurred.
+
+## 2026-11-12: Add dashboard filters, map, comparisons, and themes
+
+- **Asked:** "I merged your pull request into main. Next step: add these required features. Keep the Q1 to Q10 sections working, and do not let the new filters change the Q1 to Q6 answers, which always use the full dataset with the stated rules. You have my approval to go ahead without waiting for a plan review. When you are done, commit the changes and open a pull request into main.\
+\
+1. Filters and key numbers: filters for campus area or city, year, number of bedrooms, and price range. Show key numbers (median sale price and number of sales) that update automatically when the filters change.\
+2. Map filter: an interactive map that shows the city locations. Clicking a location filters the key numbers and related charts to that area. Place each city at the median latitude and longitude of its sales.\
+3. Range filter with a slider and number inputs: a range filter for living area with both a draggable range slider and number inputs for the minimum and maximum. The slider and the inputs must stay in sync.\
+4. Home feature filter: filter by garage, basement, or fireplace. Treat blanks as unknown, not as \"no\".\
+5. Shareable filters: save the current filter settings in the page address, so opening a copied link shows the same view.\
+6. Side-by-side comparison: pick two campus areas or cities and compare at least their median sale price and number of sales side by side.\
+7. Sortable table: a results table that sorts when a column header is clicked.\
+8. Responsive layout: the page, charts, map and controls work on desktop, tablet and phone. On a 375 pixel wide screen nothing should need sideways scrolling.\
+9. Light and dark modes: a toggle. Charts, the map, and all controls must stay readable in both.\
+10. Data and methods section: state the rules used (the price rule, how days on market is computed, how missing values are handled) and cite the dataset as described in the data description sheet.\
+\
+Tell me what you built and how you checked it."
+- **Agent produced:** Added an interactive filter dashboard with key metrics, median-coordinate city map, living-area dual slider and synced number fields, unknown-aware property features, URL-saved filters, two-area comparisons, sortable results, and light/dark themes. Updated the data/methods notes and README.
+- **Checked or changed:** Verified the dashboard at 375px and tablet width with no document horizontal overflow. Checked map selection and copied-link restoration, range input synchronization, feature filters, comparisons, sorting, and theme control colors. Confirmed Q1–Q6 answers remain unchanged while the dashboard filters update. Fixed missing living-area values to remain excluded from the selected numeric range and from area medians.
