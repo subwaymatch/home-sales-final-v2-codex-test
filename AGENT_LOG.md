@@ -64,3 +64,15 @@ Before you finish, compute the Q1 to Q6 answers a second way (for example with a
 Tell me what you built and how you checked it."
 - **Agent produced:** Added an interactive filter dashboard with key metrics, median-coordinate city map, living-area dual slider and synced number fields, unknown-aware property features, URL-saved filters, two-area comparisons, sortable results, and light/dark themes. Updated the data/methods notes and README.
 - **Checked or changed:** Verified the dashboard at 375px and tablet width with no document horizontal overflow. Checked map selection and copied-link restoration, range input synchronization, feature filters, comparisons, sorting, and theme control colors. Confirmed Q1–Q6 answers remain unchanged while the dashboard filters update. Fixed missing living-area values to remain excluded from the selected numeric range and from area medians.
+
+## 2026-11-12: Add the P1 data-quality insight
+
+- **Asked:** "I merged that pull request. Next, add an Insights section near the end of the page, after Q10 and before Data and methods. You have my approval to go ahead without waiting for a plan review. When you are done, commit the changes and open a pull request into main.\
+\
+For now, add only P1. Leave a heading for P2 with the text \"Coming soon\"; I will write P2 myself later.\
+\
+P1. Data quality. Use problem 1 from the data description sheet, \"Days on market needs both dates, a blank is not zero, and the blanks are not random.\" Show, for each city, the share of sales with no list date, and how the city median days on market would change if blanks were wrongly treated as zero days. Include a chart or table that shows the correct and the wrong medians side by side. Then write 150 to 300 words explaining how the site handles the problem, what would have gone wrong otherwise, and what the rule cannot fix (for example, that unlisted sales are more often new construction).\
+\
+Use exact numbers computed from the data and check them with a script before you finish."
+- **Agent produced:** Added an Insights section after Q10 with a complete per-city P1 table, a 259-word data-quality explanation, and the requested P2 “Coming soon” placeholder. Added `scripts/analyze_days_on_market_missingness.py` and documented it in README.
+- **Checked or changed:** Ran the pandas script and compared its city counts, shares, correct medians, zero-filled medians, and changes with the rendered table. It reports 35,442 total sales and 28,042 with both dates. Chromium showed 18 city rows, a 259-word explanation, all ten Q sections, P2 text, no JavaScript errors, and no horizontal overflow at 375px.

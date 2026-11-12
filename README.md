@@ -1,6 +1,6 @@
 # Home sales, measured
 
-An interactive, report-style exploration of 35,442 completed home sales across 18 college-town cities and 11 campus areas. The page answers ten questions about prices, sale timing, property taxes and distance to campus.
+An interactive, report-style exploration of 35,442 completed home sales across 18 college-town cities and 11 campus areas. The page answers ten questions about prices, sale timing, property taxes and distance to campus, with an Insights section explaining a key missing-date data-quality issue.
 
 The explorer adds campus, city, year, bedroom, price, living-area, garage, basement, and fireplace filters; map-based city selection; shareable filter URLs; two-area comparisons; a sortable results table; and a light/dark theme. Dashboard filters affect the explorer only. The Q1–Q6 report below is always calculated from the full dataset using each question's stated rules.
 
@@ -20,7 +20,7 @@ The dashboard summary uses valid-price sales and treats missing values as unknow
 
 ## Tools
 
-Plain HTML, CSS and JavaScript, with Papa Parse loaded from jsDelivr for CSV parsing. `scripts/verify_report.py` independently computes Q1–Q6 with pandas.
+Plain HTML, CSS and JavaScript, with Papa Parse loaded from jsDelivr for CSV parsing. `scripts/verify_report.py` independently computes Q1–Q6 with pandas; `scripts/analyze_days_on_market_missingness.py` independently checks the P1 missing-date table and zero-filled counterfactual.
 
 ## Citation
 
