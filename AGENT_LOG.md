@@ -76,3 +76,13 @@ P1. Data quality. Use problem 1 from the data description sheet, \"Days on marke
 Use exact numbers computed from the data and check them with a script before you finish."
 - **Agent produced:** Added an Insights section after Q10 with a complete per-city P1 table, a 259-word data-quality explanation, and the requested P2 “Coming soon” placeholder. Added `scripts/analyze_days_on_market_missingness.py` and documented it in README.
 - **Checked or changed:** Ran the pandas script and compared its city counts, shares, correct medians, zero-filled medians, and changes with the rendered table. It reports 35,442 total sales and 28,042 with both dates. Chromium showed 18 city rows, a 259-word explanation, all ten Q sections, P2 text, no JavaScript errors, and no horizontal overflow at 375px.
+
+
+## 2026-11-12: Design round 1 typography and color
+
+- **Asked:** "I merged that pull request. Design round 1: typography and color. You have my approval to go ahead without waiting for a plan review. When you are done, commit the changes and open a pull request into main with a short description of what changed.\
+
+- Typography: use a free, open-source font from Google Fonts (not the browser default). Pick a pairing that feels like a professional real estate or research report, for example a serif for headings and a clean sans serif for body text and numbers. Make headings, body text, and captions easy to tell apart.\
+- Color: define a small palette (neutrals plus one or two accents) as CSS variables, and use it everywhere: charts, the map, buttons, links, and controls. Keep the accent color for highlighted answer cities. Make sure the palette works in both light and dark modes."
+- **Agent produced:** Added Newsreader serif display typography with DM Sans for body, data labels, and controls. Consolidated light and dark colors into shared CSS theme variables and applied them to report content, charts, map, controls, links, and buttons. Documented the font and palette choices in README.
+- **Checked or changed:** Found and fixed two palette editing errors before browser review: the metrics card referenced an undefined `--navy` token, and two heading rules had redundant serif fallbacks after the font variable. Checked computed font loading, chart/map/control colors, dark theme, and 375px layout in Chromium.
