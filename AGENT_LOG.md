@@ -107,3 +107,21 @@ Use exact numbers computed from the data and check them with a script before you
 - Check the page again at 375, 768, and 1280 pixels wide, in both light and dark modes, and fix anything that looks off."
 - **Agent produced:** Added a data-driven three-finding summary, a full table of contents with links to the overview, dashboard, questions, Insights, P1/P2, and data/methods, and a descriptive browser title. Standardized loading and empty-filter messages. Tightened layout spacing and made the filtered-results table responsive at mobile/tablet widths and compact at desktop content widths. Reduced map clutter by using selectable median-location dots with the city list below.
 - **Checked or changed:** Chromium checked all three requested widths in light and dark themes; page and results table stayed within their content widths, all 17 section links resolved, and there were no browser errors. Verified the loading state, empty filters message, unchanged fixed Q1 answer under dashboard filters, and map city selection. Visual checks caught repeated dark dropdown chevrons, an overpainted dark slider, oversized table sort icons, crowded map labels, and compressed table headings; fixed each before final review. The P2 “Coming soon” placeholder remains because it was explicitly requested for the Insights section in the previous round.
+
+## 2026-11-12: Add P2 and visitor-focused README
+
+- **Asked:** "I merged that pull request. Last round: P2 and the README. You have my approval to go ahead without waiting for a plan review. When you are done, commit the changes and open a pull request into main.\
+
+1. Replace the \"Coming soon\" text under P2 with the heading \"P2. Working with a coding agent\" and the text below, exactly as written. Do not edit my wording.\
+
+I built this site with ChatGPT Codex in the cloud using the GPT-6 Luna model, in seven rounds. Each round was one prompt and one pull request that I reviewed and merged before sending the next one. I did not write any code by hand.\
+
+Working with the agent felt more like managing a project than doing an analysis. In a Jupyter notebook with pandas or SQL, I would write each groupby or query myself and see every intermediate table. With Codex, I described the rules in plain English (valid prices from $10,000 to $5,000,000, days on market from list date to contract date, blank dates left out rather than counted as zero) and the agent turned them into code. Because I could not see each step, I relied on the independent pandas check script it wrote and compared a few answers with my own numbers before merging.\
+
+The agent was strongest on work that would take me days in a notebook: the filters, the shareable links, the side-by-side comparison, and the dark mode. It even drew the map as an SVG instead of adding a map library. The slow part was waiting. The round that added all ten features took about half an hour, so I learned to send one clear, complete prompt instead of many small ones.\
+
+For a quick one-time question I still prefer a notebook, because I can see the data change as I go. For a finished product that other people will use, I prefer the agent.\
+
+2. In README.md, add a short section called \"How this site was built\" that says it was built with ChatGPT Codex in the cloud (model: GPT-6 Luna) over seven rounds of prompts and pull requests, and that P2 on the site describes the experience. Make sure the README is written for visitors: what the site shows, the live site link, where the data comes from, and how to check the numbers. Remove any wording that says P2 is coming soon."
+- **Agent produced:** Replaced P2’s placeholder with the requested heading and four paragraphs without changing the supplied wording. Rewrote README for visitors, with an overview, live site link, build history, data/methods, citation, and instructions for both independent check scripts. Updated the P2 contents link.
+- **Checked or changed:** Parsed the P2 article and asserted its heading and all four paragraph strings exactly match the prompt. Confirmed the README and page contain no “Coming soon” wording, both check scripts and the live-site URL are present, and the diff passes `git diff --check`.
